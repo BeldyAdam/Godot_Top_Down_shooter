@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b3u84076due2"]
+
+[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://dususlr2yr63q" path="res://game.gd" id="1_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_e2o6t"]
+
+[sub_resource type="Curve2D" id="Curve2D_feb5d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -493, -308, 0, 0, 0, 0, 2644, -310, 0, 0, 0, 0, 2665, 1622, 0, 0, 0, 0, -484, 1614, 0, 0, 0, 0, -495, 669, 0, 0, 0, 0, -492, -307)
+}
+point_count = 6
+
+[node name="Game" type="Node2D" unique_id=763465598]
+y_sort_enabled = true
+script = ExtResource("1_fc0e3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=851959104]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=388418584]
+offset_right = 1917.0
+offset_bottom = 1076.0
+color = Color(1.8289685e-06, 0.7180598, 0.16849172, 1)
+
+[node name="Player" parent="." unique_id=1549240604 instance=ExtResource("1_80nbo")]
+position = Vector2(967, 551)
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=1858822692]
+position = Vector2(-967, -551)
+curve = SubResource("Curve2D_feb5d")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=313136003]
+unique_name_in_owner = true
+position = Vector2(-493, -308)
+rotation = -0.0006375517
+
+[node name="PineTree" parent="." unique_id=550768128 instance=ExtResource("2_e2o6t")]
+position = Vector2(274, 402)
+
+[node name="PineTree2" parent="." unique_id=1756538669 instance=ExtResource("2_e2o6t")]
+position = Vector2(261, 594)
+
+[node name="PineTree3" parent="." unique_id=1756572803 instance=ExtResource("2_e2o6t")]
+position = Vector2(257, 813)
+
+[node name="PineTree4" parent="." unique_id=1143390968 instance=ExtResource("2_e2o6t")]
+position = Vector2(782, 436)
+
+[node name="PineTree5" parent="." unique_id=471298635 instance=ExtResource("2_e2o6t")]
+position = Vector2(795, 781)
+
+[node name="Timer" type="Timer" parent="." unique_id=661155824]
+wait_time = 0.3
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=1781096299]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=1482026892]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7490196)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect" unique_id=826462766]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -11.5
+offset_right = 63.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 49
+text = "Vége a mókának"
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
