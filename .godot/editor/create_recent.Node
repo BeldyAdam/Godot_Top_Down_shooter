@@ -1,5 +1,9 @@
-Label
 ColorRect
+VBoxContainer
+CenterContainer
+Button
+TextureRect
+Label
 CanvasLayer
 Timer
 PathFollow2D
@@ -8,6 +12,3 @@ ProgressBar
 CollisionShape2D
 Area2D
 Marker2D
-Camera2D
-CharacterBody2D
-StaticBody2D

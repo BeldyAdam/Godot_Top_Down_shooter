@@ -75,7 +75,7 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Top_Down_Survivor_Shooter"
-run/main_scene="uid://b3u84076due2"
+run/main_scene="uid://raq78bgbrvdj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
 

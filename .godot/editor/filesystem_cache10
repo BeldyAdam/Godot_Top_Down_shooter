@@ -1,5 +1,7 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1775681149
+::res://::1775683347
+Borso_shooter_logo.png::CompressedTexture2D::284751640058742805::1775682839::1775682899::1::::<><><>0<>0<>d2b752e235e3309af61da13fc8515bfd<>res://.godot/imported/Borso_shooter_logo.png-2f2d800a752bd5ce198bea80d6027a0f.ctex::
+borsó_shooter_logo_transparent.png::CompressedTexture2D::8070886788523433228::1775683347::1775683352::1::::<><><>0<>0<>cff5eb518b2e2b47e38d89a235e1ab42<>res://.godot/imported/borsó_shooter_logo_transparent.png-aa7ee4ece671cf0e3bba5f82d47c4b31.ctex::
 bullet.gd::GDScript::5143679735126824684::1775676163::0::1::::<>Area2D<><>0<>0<><>::
 bullet.tscn::PackedScene::4510038469915135496::1775676908::0::1::::<><><>0<>0<><>::uid://cfjvwhypwf5h5::::res://bullet.gd<>uid://bd4rrqj72amnx::::res://pistol/projectile.png
 default_bus_layout.tres::AudioBusLayout::6564268947468103023::1775662992::0::1::::<><><>0<>0<><>::
@@ -13,6 +15,8 @@ mob.tscn::PackedScene::1744350205456824847::1775677639::0::1::::<><><>0<>0<><>::
 pine_tree.tscn::PackedScene::8341164372918984475::1775667462::0::1::::<><><>0<>0<><>::uid://dk5b8a84a6n2h::::res://characters/ground_shadow.png<>uid://bql1cc345qv7d::::res://trees/pine_tree.png
 player.gd::GDScript::3623684132843660951::1775680639::0::1::::<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::6636363802798909755::1775680639::0::1::::<><><>0<>0<><>::uid://pbmyh1qru7p::::res://characters/happy_boo/happy_boo.tscn<>uid://brvlsv1ci5w12::::res://player.gd<>uid://du5i8r7jdycua::::res://gun.tscn
+main_menu.tscn::PackedScene::1194240694225771227::1775683201::0::1::::<><><>0<>0<><>::uid://eb622rdjw4nh::::res://Borso_shooter_logo.png<>uid://7bca2avarabs::::res://main_menu.gd
+main_menu.gd::GDScript::2248230227241895004::1775683189::0::1::::<>Control<><>0<>0<><>::
 ::res://addons/::1775680989
 ::res://addons/colorpicker_presets/::1775680989
 colorpicker_presets.gd::GDScript::2597531570939366545::1775662991::0::1::::<>EditorPlugin<><>0<>1<><>::
