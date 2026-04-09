@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b3u84076due2"]
 
-[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://dususlr2yr63q" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bqy2e3ap7l3dt" path="res://player_borso.tscn" id="2_eow3j"]
 [ext_resource type="Texture2D" uid="uid://c6s3i4uywjhe5" path="res://Buttons/EndScreenImage.PNG" id="4_ryrav"]
 [ext_resource type="Texture2D" uid="uid://d8qi7qhnyl7u" path="res://Buttons/BackToMainMenu.PNG" id="5_eow3j"]
 [ext_resource type="Texture2D" uid="uid://bmdnb42moel1e" path="res://Buttons/EndScreenImageDecor.PNG" id="5_j5wjh"]
@@ -26,11 +26,10 @@ offset_right = 1917.0
 offset_bottom = 1076.0
 color = Color(1.8289685e-06, 0.7180598, 0.16849172, 1)
 
-[node name="Player" parent="." unique_id=1549240604 instance=ExtResource("1_80nbo")]
-position = Vector2(967, 551)
+[node name="Player" parent="." unique_id=1549240604 instance=ExtResource("2_eow3j")]
+position = Vector2(1128, 609)
 
 [node name="Path2D" type="Path2D" parent="Player" unique_id=1858822692]
-position = Vector2(-967, -551)
 curve = SubResource("Curve2D_feb5d")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=313136003]
@@ -40,10 +39,10 @@ rotation = -0.0006375517
 
 [node name="ScoreLabel" type="Label" parent="Player" unique_id=570636720]
 unique_name_in_owner = true
-offset_left = -35.0
-offset_top = -431.0
-offset_right = 13.0
-offset_bottom = -408.0
+offset_left = -22.0
+offset_top = -155.0
+offset_right = 26.0
+offset_bottom = -132.0
 text = "0"
 
 [node name="PineTree" parent="." unique_id=550768128 instance=ExtResource("2_e2o6t")]

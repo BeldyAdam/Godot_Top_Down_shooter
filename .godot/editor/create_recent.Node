@@ -1,8 +1,9 @@
+AnimatedSprite2D
+Node2D
 TextureButton
 Button
 Label
 CollisionShape2D
-AnimatedSprite2D
 CharacterBody2D
 ColorRect
 Control
@@ -11,4 +12,3 @@ CenterContainer
 TextureRect
 CanvasLayer
 Timer
-PathFollow2D

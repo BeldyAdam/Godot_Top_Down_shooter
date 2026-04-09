@@ -10,10 +10,34 @@ func _physics_process(delta):
 	velocity = direction * 600
 	move_and_slide()
 	
-	if velocity.length() > 0.0:
-		%HappyBoo.play_walk_animation()
+	#if velocity.length() > 0.0:
+		#%HappyBoo.play_walk_animation()
+	#else:
+		#%HappyBoo.play_idle_animation()
+		
+	var sprite = $HappyBoo/Sprite
+	var anim_direction = "south"
+
+	if abs(direction.x) > abs(direction.y):
+		if direction.x > 0:
+			anim_direction = "east"
+		elif direction.x < 0:
+			anim_direction = "west"
 	else:
-		%HappyBoo.play_idle_animation()
+		if direction.y > 0:
+			anim_direction = "south"
+		elif direction.y < 0:
+			anim_direction = "north"
+
+	if velocity.length() > 0.0:
+		var walk_animation = "walk_" + anim_direction
+		if sprite.animation != walk_animation:
+			sprite.play(walk_animation)
+	else:
+		var idle_animation = "idle_" + anim_direction
+		if sprite.animation != idle_animation:
+			sprite.play(idle_animation)
+	
 	
 	if slime_damage_cooldown > 0.0:
 		slime_damage_cooldown -= delta
