@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://dususlr2yr63q" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://cfsmb11v7u08g" path="res://mob_2.tscn" id="3_fc0e3"]
 
 [sub_resource type="Curve2D" id="Curve2D_feb5d"]
 _data = {
@@ -81,6 +82,18 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
 text = "Vége a mókának"
+
+[node name="Mob_2" parent="." unique_id=690546805 instance=ExtResource("3_fc0e3")]
+position = Vector2(1387, 456)
+
+[node name="Mob_3" parent="." unique_id=1785883344 instance=ExtResource("3_fc0e3")]
+position = Vector2(1867, 779)
+
+[node name="Mob_4" parent="." unique_id=1151820799 instance=ExtResource("3_fc0e3")]
+position = Vector2(1922, 671)
+
+[node name="Mob_5" parent="." unique_id=44555328 instance=ExtResource("3_fc0e3")]
+position = Vector2(2181, 601)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

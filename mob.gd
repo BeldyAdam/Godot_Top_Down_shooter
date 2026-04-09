@@ -20,3 +20,7 @@ func take_damage():
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
 		
+		var game = get_node("/root/Game")
+		if game.has_method("add_score"):
+			game.add_score(5)
+		

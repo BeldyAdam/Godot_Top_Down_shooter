@@ -1,19 +1,27 @@
 extends Node2D
 
+var score := 0
+
+var enemy_scenes = [
+	preload("res://mob.tscn"),
+	preload("res://mob_2.tscn")
+]
 
 func spawn_mob():
-	var new_mob = preload("res://mob.tscn").instantiate()
+	var enemy_scene = enemy_scenes.pick_random()
+	var new_mob = enemy_scene.instantiate()
+
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)
-	
-	
-
 
 func _on_timer_timeout():
 	spawn_mob()
 
-
 func _on_player_health_depleted():
 	%GameOver.visible = true
 	get_tree().paused = true
+	
+func add_score(amount):
+	score += amount
+	print("Score: ", score)

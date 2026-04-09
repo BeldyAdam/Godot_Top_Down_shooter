@@ -1,3 +1,6 @@
+CollisionShape2D
+AnimatedSprite2D
+CharacterBody2D
 ColorRect
 TextureButton
 Button
@@ -9,6 +12,3 @@ Label
 CanvasLayer
 Timer
 PathFollow2D
-Path2D
-ProgressBar
-CollisionShape2D
