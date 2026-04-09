@@ -6,3 +6,4 @@ res://game.tscn
 res://game.gd
 res://player.gd
 res://mob.gd
+res://characters/happy_boo/happy_boo.tscn

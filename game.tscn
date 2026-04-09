@@ -67,6 +67,8 @@ autostart = true
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=1781096299]
 unique_name_in_owner = true
+process_mode = 3
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=1482026892]
 anchors_preset = 15
@@ -85,6 +87,7 @@ position = Vector2(949, 1015)
 texture = ExtResource("5_j5wjh")
 
 [node name="BackToMainMenu" type="TextureButton" parent="GameOver/ColorRect" unique_id=2108563840]
+process_mode = 3
 layout_mode = 0
 offset_left = 620.0
 offset_top = 622.0
