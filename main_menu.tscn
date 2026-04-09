@@ -1,87 +1,63 @@
 [gd_scene format=3 uid="uid://raq78bgbrvdj"]
 
-[ext_resource type="Script" uid="uid://7bca2avarabs" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://bxew82issvght" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://xnk2x3jftdt7" path="res://Buttons/Not-Active/Start_NA.PNG" id="2_qe12f"]
+[ext_resource type="Texture2D" uid="uid://cq6hu6t2erc4t" path="res://Buttons/Active/Start_A.PNG" id="3_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://cw7kk751qoipp" path="res://Buttons/Not-Active/YOLO_NA.PNG" id="4_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://dm6fxfi0ajv8a" path="res://Buttons/Active/YOLO_A.PNG" id="5_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://d0pyj5rvlhxf0" path="res://Buttons/Not-Active/Exit_NA.PNG" id="6_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://17p8r8fo3wh3" path="res://Buttons/Active/Exit_A.PNG" id="7_j5v2v"]
+[ext_resource type="Texture2D" uid="uid://dm8uldempydvg" path="res://borsó_shooter_logo_transparent.png" id="8_8qtwp"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_06t4h"]
-load_path = "res://.godot/imported/borsó_shooter_logo_transparent.png-aa7ee4ece671cf0e3bba5f82d47c4b31.ctex"
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
-bg_color = Color(0.8666667, 0, 0.53333336, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
-bg_color = Color(0.7996736, 0, 0.012890859, 1)
-
-[node name="MainMenu" type="Control" unique_id=2016846885]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="MainMenu" type="Node2D" unique_id=2077991421]
 script = ExtResource("1_7vrkn")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=372710622]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.27541074, 0.01880146, 0.43517706, 1)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=817621137]
+offset_right = 1923.0
+offset_bottom = 1082.0
+color = Color(0.19227445, 0.07252266, 0.23895514, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1625000139]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -967.00006
-offset_top = -540.0
-offset_right = 569.0
-offset_bottom = 484.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.2552959, 1.0532119)
+[node name="ButtonManager" type="Control" parent="." unique_id=1157788291]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1845797770]
-custom_minimum_size = Vector2(500, 250)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = SubResource("CompressedTexture2D_06t4h")
-
-[node name="jatek" type="Button" parent="CenterContainer/TextureRect" unique_id=1168055685]
-custom_minimum_size = Vector2(250, 50)
+[node name="Start" type="TextureButton" parent="ButtonManager" unique_id=1942824271]
 layout_mode = 0
-offset_left = 575.0
-offset_top = 795.686
-offset_right = 975.0
-offset_bottom = 845.686
-tooltip_text = "Próbáld ki mit él át csinál Orsi amikor nem látjuk"
-theme_override_font_sizes/font_size = 26
-theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
-text = "Játék"
+offset_left = -24.0
+offset_top = 832.0
+offset_right = 678.0
+offset_bottom = 1045.0
+texture_normal = ExtResource("2_qe12f")
+texture_pressed = ExtResource("3_8qtwp")
+texture_hover = ExtResource("3_8qtwp")
 
-[node name="kilepes" type="Button" parent="CenterContainer/TextureRect" unique_id=262332034]
-custom_minimum_size = Vector2(250, 50)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -193.0
-offset_top = -172.47101
-offset_right = 207.0
-offset_bottom = -122.47101
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 26
-theme_override_styles/hover = SubResource("StyleBoxFlat_06t4h")
-text = "Kilépés"
+[node name="Yolo" type="TextureButton" parent="ButtonManager" unique_id=480886676]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 849.0
+offset_right = 1313.0
+offset_bottom = 1045.0
+texture_normal = ExtResource("4_dy7ct")
+texture_pressed = ExtResource("5_0o4t1")
+texture_hover = ExtResource("5_0o4t1")
 
-[connection signal="pressed" from="CenterContainer/TextureRect/jatek" to="." method="_on_jatek_pressed"]
-[connection signal="pressed" from="CenterContainer/TextureRect/kilepes" to="." method="_on_kilepes_pressed"]
+[node name="Exit" type="TextureButton" parent="ButtonManager" unique_id=1327642220]
+layout_mode = 0
+offset_left = 1226.0
+offset_top = 835.0
+offset_right = 1944.0
+offset_bottom = 1022.0
+texture_normal = ExtResource("6_0k4wn")
+texture_pressed = ExtResource("7_j5v2v")
+texture_hover = ExtResource("7_j5v2v")
+
+[node name="BorsóShooterLogoTransparent" type="Sprite2D" parent="." unique_id=855032583]
+position = Vector2(1030, 381.00003)
+scale = Vector2(1.439453, 1.0883789)
+texture = ExtResource("8_8qtwp")
+
+[connection signal="pressed" from="ButtonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonManager/Yolo" to="." method="_on_yolo_pressed"]
+[connection signal="pressed" from="ButtonManager/Exit" to="." method="_on_exit_pressed"]

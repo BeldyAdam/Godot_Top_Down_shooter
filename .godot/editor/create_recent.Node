@@ -1,7 +1,9 @@
 ColorRect
+TextureButton
+Button
+Control
 VBoxContainer
 CenterContainer
-Button
 TextureRect
 Label
 CanvasLayer
@@ -10,5 +12,3 @@ PathFollow2D
 Path2D
 ProgressBar
 CollisionShape2D
-Area2D
-Marker2D
