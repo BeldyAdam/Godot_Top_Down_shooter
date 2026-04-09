@@ -1,14 +1,14 @@
+TextureButton
+Button
+Label
 CollisionShape2D
 AnimatedSprite2D
 CharacterBody2D
 ColorRect
-TextureButton
-Button
 Control
 VBoxContainer
 CenterContainer
 TextureRect
-Label
 CanvasLayer
 Timer
 PathFollow2D

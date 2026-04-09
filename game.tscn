@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://dususlr2yr63q" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://cfsmb11v7u08g" path="res://mob_2.tscn" id="3_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://c6s3i4uywjhe5" path="res://Buttons/EndScreenImage.PNG" id="4_ryrav"]
+[ext_resource type="Texture2D" uid="uid://d8qi7qhnyl7u" path="res://Buttons/BackToMainMenu.PNG" id="5_eow3j"]
+[ext_resource type="Texture2D" uid="uid://bmdnb42moel1e" path="res://Buttons/EndScreenImageDecor.PNG" id="5_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://dxpqnr57i0e53" path="res://Buttons/BackToMainMenu_A.PNG" id="6_j5wjh"]
 
 [sub_resource type="Curve2D" id="Curve2D_feb5d"]
 _data = {
@@ -35,6 +38,14 @@ unique_name_in_owner = true
 position = Vector2(-493, -308)
 rotation = -0.0006375517
 
+[node name="ScoreLabel" type="Label" parent="Player" unique_id=570636720]
+unique_name_in_owner = true
+offset_left = -35.0
+offset_top = -431.0
+offset_right = 13.0
+offset_bottom = -408.0
+text = "0"
+
 [node name="PineTree" parent="." unique_id=550768128 instance=ExtResource("2_e2o6t")]
 position = Vector2(274, 402)
 
@@ -56,7 +67,6 @@ autostart = true
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=1781096299]
 unique_name_in_owner = true
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=1482026892]
 anchors_preset = 15
@@ -66,34 +76,25 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.7490196)
 
-[node name="Label" type="Label" parent="GameOver/ColorRect" unique_id=826462766]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.5
-offset_top = -11.5
-offset_right = 63.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 49
-text = "Vége a mókának"
+[node name="EndScreenImage" type="Sprite2D" parent="GameOver/ColorRect" unique_id=1197757724]
+position = Vector2(963, 372)
+texture = ExtResource("4_ryrav")
 
-[node name="Mob_2" parent="." unique_id=690546805 instance=ExtResource("3_fc0e3")]
-position = Vector2(1387, 456)
+[node name="EndScreenImageDecor" type="Sprite2D" parent="GameOver/ColorRect" unique_id=1146870828]
+position = Vector2(949, 1015)
+texture = ExtResource("5_j5wjh")
 
-[node name="Mob_3" parent="." unique_id=1785883344 instance=ExtResource("3_fc0e3")]
-position = Vector2(1867, 779)
-
-[node name="Mob_4" parent="." unique_id=1151820799 instance=ExtResource("3_fc0e3")]
-position = Vector2(1922, 671)
-
-[node name="Mob_5" parent="." unique_id=44555328 instance=ExtResource("3_fc0e3")]
-position = Vector2(2181, 601)
+[node name="BackToMainMenu" type="TextureButton" parent="GameOver/ColorRect" unique_id=2108563840]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 622.0
+offset_right = 1702.0
+offset_bottom = 920.0
+scale = Vector2(0.6000012, 0.55999875)
+texture_normal = ExtResource("5_eow3j")
+texture_pressed = ExtResource("6_j5wjh")
+texture_hover = ExtResource("6_j5wjh")
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="GameOver/ColorRect/BackToMainMenu" to="." method="_on_back_to_main_menu_pressed"]
