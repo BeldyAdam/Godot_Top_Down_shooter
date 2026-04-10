@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dususlr2yr63q" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bqy2e3ap7l3dt" path="res://player_borso.tscn" id="2_eow3j"]
+[ext_resource type="Texture2D" uid="uid://cys06cj2ts50s" path="res://Wave_Score_UI2.PNG" id="3_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://c6s3i4uywjhe5" path="res://Buttons/EndScreenImage.PNG" id="4_ryrav"]
 [ext_resource type="Texture2D" uid="uid://d8qi7qhnyl7u" path="res://Buttons/BackToMainMenu.PNG" id="5_eow3j"]
 [ext_resource type="Texture2D" uid="uid://bmdnb42moel1e" path="res://Buttons/EndScreenImageDecor.PNG" id="5_j5wjh"]
@@ -10,9 +11,13 @@
 
 [sub_resource type="Curve2D" id="Curve2D_feb5d"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -493, -308, 0, 0, 0, 0, 2644, -310, 0, 0, 0, 0, 2665, 1622, 0, 0, 0, 0, -484, 1614, 0, 0, 0, 0, -495, 669, 0, 0, 0, 0, -492, -307)
+"points": PackedVector2Array(0, 0, 0, 0, -906, -749, 0, 0, 0, 0, 2651, -744, 0, 0, 0, 0, 2665, 1622, 0, 0, 0, 0, -892.0399, 1620.3488, 0, 0, 0, 0, -896.22797, 583.4491, 0, 0, 0, 0, -904.604, -745.6978)
 }
 point_count = 6
+
+[sub_resource type="SystemFont" id="SystemFont_j5wjh"]
+
+[sub_resource type="SystemFont" id="SystemFont_vef74"]
 
 [node name="Game" type="Node2D" unique_id=763465598]
 y_sort_enabled = true
@@ -27,23 +32,51 @@ offset_bottom = 1076.0
 color = Color(1.8289685e-06, 0.7180598, 0.16849172, 1)
 
 [node name="Player" parent="." unique_id=1549240604 instance=ExtResource("2_eow3j")]
-position = Vector2(1128, 609)
+position = Vector2(595, 604)
 
 [node name="Path2D" type="Path2D" parent="Player" unique_id=1858822692]
+position = Vector2(-257.00867, -295.3669)
+scale = Vector2(0.71632594, 0.6056516)
 curve = SubResource("Curve2D_feb5d")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=313136003]
 unique_name_in_owner = true
-position = Vector2(-493, -308)
-rotation = -0.0006375517
+position = Vector2(-906, -749)
+rotation = 0.0014056781
+
+[node name="WaveScoreUi2" type="Sprite2D" parent="Player" unique_id=1622218143]
+z_index = 1
+position = Vector2(-661.5, 427.49997)
+scale = Vector2(0.5810547, 0.65568864)
+texture = ExtResource("3_j5wjh")
 
 [node name="ScoreLabel" type="Label" parent="Player" unique_id=570636720]
 unique_name_in_owner = true
-offset_left = -22.0
-offset_top = -155.0
-offset_right = 26.0
-offset_bottom = -132.0
+z_index = 1
+offset_left = -594.0
+offset_top = 463.99994
+offset_right = -571.5
+offset_bottom = 513.99994
+theme_override_colors/font_color = Color(0.99607843, 0.9019608, 0.5882353, 1)
+theme_override_fonts/font = SubResource("SystemFont_j5wjh")
+theme_override_font_sizes/font_size = 36
 text = "0"
+
+[node name="WaveLabel" type="Label" parent="Player" unique_id=2101956261]
+unique_name_in_owner = true
+z_index = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -560.0
+offset_top = 395.99994
+offset_right = -532.5
+offset_bottom = 450.99994
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.32901683, 0.89295304, 0.9764767, 1)
+theme_override_fonts/font = SubResource("SystemFont_vef74")
+theme_override_font_sizes/font_size = 40
+text = "1"
 
 [node name="PineTree" parent="." unique_id=550768128 instance=ExtResource("2_e2o6t")]
 position = Vector2(274, 402)
@@ -61,6 +94,7 @@ position = Vector2(782, 436)
 position = Vector2(795, 781)
 
 [node name="Timer" type="Timer" parent="." unique_id=661155824]
+unique_name_in_owner = true
 wait_time = 0.3
 autostart = true
 

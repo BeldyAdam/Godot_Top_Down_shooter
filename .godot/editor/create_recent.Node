@@ -1,8 +1,8 @@
+Label
 AnimatedSprite2D
 Node2D
 TextureButton
 Button
-Label
 CollisionShape2D
 CharacterBody2D
 ColorRect

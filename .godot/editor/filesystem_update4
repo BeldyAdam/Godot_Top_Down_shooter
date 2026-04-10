@@ -1,10 +1,5 @@
-res://main_menu.gd
-res://main_menu.tscn
-res://mob_2.tscn
+res://player_borso.tscn
 res://mob_2.gd
 res://game.tscn
+res://mob_2.tscn
 res://game.gd
-res://player.gd
-res://mob.gd
-res://characters/happy_boo/happy_boo.tscn
-res://player_borso.tscn
