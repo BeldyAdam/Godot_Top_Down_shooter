@@ -1,27 +1,28 @@
 extends Area2D
 
-var target_enemy = null
+var can_shoot = true
 
 func _process(_delta):
-	var enemies = get_overlapping_bodies()
+	look_at(get_global_mouse_position())
 	
-	if enemies.size() > 0:
-		target_enemy = enemies.front()
-		look_at(target_enemy.global_position)
-	else:
-		target_enemy = null
+	if Input.is_action_pressed("shoot") and can_shoot:
+		shoot()
+		can_shoot = false
+		$Timer.start()
 
 
 func shoot():
 	const BULLET = preload("res://bullet.tscn")
 	var new_bullet = BULLET.instantiate()
 	
-	new_bullet.global_transform = %ShootingPoint.global_transform
-	new_bullet.global_rotation = %ShootingPoint.global_rotation
+	new_bullet.global_position = %ShootingPoint.global_position
+
+	var mouse_position = get_global_mouse_position()
+	var direction = mouse_position - %ShootingPoint.global_position
+	new_bullet.global_rotation = direction.angle()
 	
-	%ShootingPoint.add_child(new_bullet)
+	get_tree().current_scene.add_child(new_bullet)
 
 
 func _on_timer_timeout():
-	if target_enemy:
-		shoot()
+	can_shoot = true

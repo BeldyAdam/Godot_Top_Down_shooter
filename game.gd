@@ -44,13 +44,15 @@ var waves = [
 	},
 	{
 		"name": "5",
-		"enemy_count": 10,
+		"enemy_count": 100,
 		"spawn_interval": 1.0,
 		"allowed_mobs": ["skeleton"]
 	}
 ]
 
 func _ready():
+	var cursor_texture = load("res://Crosshair/crosshair038.png")
+	Input.set_custom_mouse_cursor(cursor_texture, Input.CURSOR_ARROW, Vector2(16, 16))
 	score_label.text = "0"
 	start_wave(0)
 

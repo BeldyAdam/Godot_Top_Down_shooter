@@ -8,17 +8,14 @@ height = 36.0
 
 [node name="Bullet" type="Area2D" unique_id=291597489]
 top_level = true
-position = Vector2(277, 219)
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_v8qja")
 
 [node name="Projectile" type="Sprite2D" parent="." unique_id=728111655]
-position = Vector2(-1, 0)
 texture = ExtResource("2_t4vbm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=619472578]
-position = Vector2(4, 1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_2b2rl")
 

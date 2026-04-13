@@ -1,5 +1,7 @@
 res://player_borso.tscn
-res://mob_2.gd
+res://gun.gd
+res://gun.tscn
+res://bullet.gd
 res://game.tscn
-res://mob_2.tscn
 res://game.gd
+res://bullet.tscn
